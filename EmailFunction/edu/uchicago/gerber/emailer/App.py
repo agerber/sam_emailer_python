@@ -1,6 +1,11 @@
 import json
 from typing import Dict
-from Message import Message
+
+try:
+    from Message import Message
+except Exception as e:
+    print(e)
+    from edu.uchicago.gerber.emailer.Message import Message
 
 
 def lambda_handler(event, context):
@@ -94,5 +99,5 @@ if __name__ == "__main__":
             "protocol": "HTTP/1.1"
         }
     }
-  
+
     print(lambda_handler(event_, None))
