@@ -1,11 +1,6 @@
 import json
 from typing import Dict
-
-try:
-    from Message import Message
-except Exception as e:
-    print(e)
-    from edu.uchicago.gerber.emailer.Message import Message
+from Message import Message
 
 
 def lambda_handler(event, context):
