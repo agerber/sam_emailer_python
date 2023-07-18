@@ -13,7 +13,27 @@ sam deploy --s3-bucket emailer-3
 sam delete --stack-name "emailer-3"
 
 
-&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&7
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+
+when testing python, use this in postman -> 
+
+POST
+http://localhost:3000/mail
+
+{"subject": "hello", "body": "this is my body message", "email": "a@b.com"}
+
+to test, run these
+
+#build with container. send locally. 
+sam build --use-container
+
+
+
+#start up in a docker container
+sam local start-api
+
+&&&&&&&&&&&&&&&&&&&&&&&&&
 
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
 

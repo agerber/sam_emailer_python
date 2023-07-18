@@ -7,9 +7,6 @@ from Message import Message
 def lambda_handler(event, context):
 
 
-    print(event)
-    print((event["body"]))
-
     try:
         #attempt to parse the json into Message by passing in a dictionary
         message = json.loads(event["body"], object_hook=lambda d: Message(**d))
