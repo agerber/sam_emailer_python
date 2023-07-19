@@ -24,9 +24,9 @@ def lambda_handler(event, context):
         "event": str(event),
         "event-body": str(event["body"]), # the event-body is effectively the message
         #we parse the event-body (aka message) above
-        "message-subject": message.get_subject(),
-        "message-body": message.get_body(),
-        "message-email": message.get_email()
+        "message-subject": message.subject,
+        "message-body": message.body,
+        "message-email": message.email
     }
 
     #headers we use to send back data to the caller
