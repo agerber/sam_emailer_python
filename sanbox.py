@@ -10,6 +10,8 @@ def main():
     print(fruits[0], fruits[1], fruits[2], fruits[3])
     print(*fruits)
 
+    print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+
     dict = {"continent":"asia", "country":"china"}
     print(*dict) # will print out the keys only
     print(Country(**dict)) # will pass the key/value pairs as named parameters
