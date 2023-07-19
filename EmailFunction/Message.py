@@ -1,5 +1,5 @@
 class Message:
-    def __init__(self, subject=None, body=None, email=None):
+    def __init__(self, subject, body, email):
         self.subject = subject
         self.body = body
         self.email = email
