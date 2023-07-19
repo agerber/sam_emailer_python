@@ -1,7 +1,7 @@
 # all the following deps are referenced directly from the python sdk
 import json
 from typing import Dict
-from Message import Message
+from message import Message
 
 
 def lambda_handler(event, context):
