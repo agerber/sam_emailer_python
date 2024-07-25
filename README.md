@@ -1,16 +1,20 @@
 # sam_emailer_python
 
-//create a new bucket in s3. This will be created on your default region
-aws s3 mb s3://emailer-3
+
+
+//create a new bucket in s3. This will be created on your default region.
+//replace your-unique-name below with a bucket name that is globally unique.
+
+aws s3 mb s3://your-unique-name
 
 //build into a container
 sam build --use-container
 
 //deploy zip to this bucket
-sam deploy --s3-bucket emailer-3
+sam deploy --s3-bucket your-unique-name
 
 //clean-up when done
-sam delete --stack-name "emailer-3"
+sam delete --stack-name "your-unique-name"
 
 
 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
