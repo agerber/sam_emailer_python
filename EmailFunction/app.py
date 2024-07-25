@@ -14,7 +14,13 @@ def lambda_handler(event, context):
 
     try:
         #attempt to parse the json into Message by passing in a dictionary
-        message = json.loads(event["body"], object_hook=lambda d: Message(**d))
+        dict = json.loads(event["body"])
+        subject = dict["subject"]
+        body = dict["body"]
+        email = dict["email"]
+        message = Message(subject=subject, body=body, email=email)
+        #message = json.loads(event["body"], object_hook=lambda d: Message(**d))
+
     except json.JSONDecodeError as e:
         return {
             "body": json.dumps({str(e)}),
