@@ -13,13 +13,13 @@ def lambda_handler(event, context):
     }
 
     try:
-        #attempt to parse the json into Message by passing in a dictionary
+        # the body of the event contains the message as a json object, which we can decompose using a dictionary
         dict = json.loads(event["body"])
+
         subject = dict["subject"]
-        body = dict["body"]
+        email_body = dict["email_body"]
         email = dict["email"]
-        message = Message(subject=subject, body=body, email=email)
-        #message = json.loads(event["body"], object_hook=lambda d: Message(**d))
+        message = Message(subject=subject, email_body=email_body, email=email)
 
     except json.JSONDecodeError as e:
         return {
@@ -31,11 +31,9 @@ def lambda_handler(event, context):
 
     # convert the message object back into a json
     json_object = {
-
-        #we parse the event-body (aka message) above
-        "message-subject": message.subject,
-        "message-body": message.body,
-        "message-email": message.email
+        "subject": message.subject,
+        "email_body": message.email_body,
+        "email": message.email
     }
 
 
